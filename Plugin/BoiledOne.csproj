@@ -3,7 +3,7 @@
   <!-- BepInEx Properties -->
   <PropertyGroup>
 		<!-- This is the GUID of your mod. -->
-    <AssemblyName>Hamunii.BoiledOne</AssemblyName>
+    <AssemblyName>Wawa.BoiledOne</AssemblyName>
 		<!-- This is the name of your mod. This will be used by tcli when building our Thunderstore package. -->
     <Product>BoiledOne</Product>
     <!-- Change to whatever version you're currently on. This will be used by tcli when building our Thunderstore package. -->
@@ -13,7 +13,7 @@
   <!-- Thunderstore CLI stuff -->
   <PropertyGroup>
     <!-- Your Thunderstore Team name. This will be used by tcli when building our Thunderstore package. -->
-    <ThunderstoreTeam>Hamunii</ThunderstoreTeam>
+    <ThunderstoreTeam>Wawa</ThunderstoreTeam>
     <!-- Configure description for Thunderstore at ./Thunderstore/thunderstore.toml -->
   </PropertyGroup>
 

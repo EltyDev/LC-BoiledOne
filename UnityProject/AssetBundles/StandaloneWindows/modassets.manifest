@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 854083288
+CRC: 310827957
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 10be2fb3a8f1dfb12317e99b7cd99957
+    Hash: bd0ad8226f150e73da980ef485f22f36
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 36aac13f66a6b29711a7417366ebafe7
+    Hash: e1b62ce9b1236d41e0454d52a7b5ab7f
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: 10be2fb3a8f1dfb12317e99b7cd99957
+    Hash: bd0ad8226f150e73da980ef485f22f36
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -18,9 +18,7 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
-- Class: 23
-  Script: {instanceID: 0}
-- Class: 33
+- Class: 28
   Script: {instanceID: 0}
 - Class: 43
   Script: {instanceID: 0}
@@ -36,14 +34,16 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 83
   Script: {instanceID: 0}
+- Class: 90
+  Script: {instanceID: 0}
 - Class: 91
   Script: {instanceID: 0}
 - Class: 95
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: 65d3fcb39dd67306e9bb17a603308070, type: 3}
+  Script: {fileID: -937062683, guid: a5db7afe0dc55f7448211ac6142c98a3, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: 04f75356a7e9c978bddc7d568e58a50b, type: 3}
+  Script: {fileID: 11500000, guid: 65d3fcb39dd67306e9bb17a603308070, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 3c36d0a92cbb1f26a39169ef0eae393a, type: 3}
 - Class: 114
@@ -54,15 +54,15 @@ ClassTypes:
   Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: d3cecf05b78b173605122a700874719c, type: 3}
-- Class: 114
-  Script: {fileID: 2106200333, guid: e0a89e6f23bd69e40ab1b6cd831745f1, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 137
   Script: {instanceID: 0}
 - Class: 195
   Script: {instanceID: 0}
-- Class: 329
+- Class: 213
+  Script: {instanceID: 0}
+- Class: 895512359
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
 - AssemblyName: Assembly-CSharp
@@ -72,7 +72,51 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: Assembly-CSharp
   ClassName: NavSizeLimit
 Assets:
-- Assets/ModAssets/ExampleEnemy/ExampleEnemy.asset
-- Assets/ModAssets/ExampleEnemy/Bestiary/ExampleEnemyTK.asset
-- Assets/ModAssets/ExampleEnemy/Bestiary/ExampleEnemyTN.asset
+- Assets/ModAssets/BoiledOne/Audio/BoiledOne-Noise-3.ogg
+- Assets/ModAssets/BoiledOne/Textures/Bouille-Texture-Machoire_Metallic.png
+- Assets/ModAssets/BoiledOne/Textures/Bouille-Texture-Organes_Metallic.png
+- Assets/ModAssets/BoiledOne/Scripts/BoiledOneTN.asset
+- Assets/ModAssets/BoiledOne/Textures/Bouille-Texture-Machoire_BaseColor.png
+- Assets/ModAssets/BoiledOne/Textures/Bouille-Texture-Organes_BaseColor.png
+- Assets/ModAssets/BoiledOne/Audio/BoiledOne-Noise-4.ogg
+- Assets/ModAssets/BoiledOne/Materials/Bouille-Texture-Cage.mat
+- Assets/ModAssets/BoiledOne/Textures/Bouille-Texture-Tete_BaseColor.png
+- Assets/ModAssets/BoiledOne/Materials/Bouille-Texture-Cheveux-1.mat
+- Assets/ModAssets/BoiledOne/Meshes/Boiled-One_By-Doumty.fbx
+- Assets/ModAssets/BoiledOne/Audio/BoiledOne-Voice-2.ogg
+- Assets/ModAssets/BoiledOne/Audio/BoiledOne-Noise-5.ogg
+- Assets/ModAssets/BoiledOne/Audio/BoiledOne-Death.ogg
+- Assets/ModAssets/BoiledOne/Materials/Bouille-Noir.mat
+- Assets/ModAssets/BoiledOne/Textures/Bouille-Texture-Cage_BaseColor.png
+- Assets/ModAssets/BoiledOne/Audio/BoiledOne-Trumpet.ogg
+- Assets/ModAssets/BoiledOne/Audio/BoiledOne-Voice-1.ogg
+- Assets/ModAssets/BoiledOne/Textures/Bouille-Texture-Cheveux-2.png
+- Assets/ModAssets/BoiledOne/Animations/Boiled_One-Doumty-Animations.controller
+- Assets/ModAssets/BoiledOne/Audio/BoiledOne-Stun.ogg
+- Assets/ModAssets/BoiledOne/Materials/Bouille-Texture-Wawa.mat
+- Assets/ModAssets/BoiledOne/Textures/Bouille-Texture-Tete_Metallic.png
+- Assets/ModAssets/BoiledOne/Materials/Bouille-Texture-Cheveux-2.mat
+- Assets/ModAssets/BoiledOne/Textures/Bouille-Texture-Cheveux-1.png
+- Assets/ModAssets/BoiledOne/Audio/BoiledOne-Hit-Impact.ogg
+- Assets/ModAssets/BoiledOne/Materials/Bouille-Texture-Organes.mat
+- Assets/ModAssets/BoiledOne/Materials/Bouille-Texture-Machoire.mat
+- Assets/ModAssets/BoiledOne/Audio/BoiledOne-Noise-1.ogg
+- Assets/ModAssets/BoiledOne/Materials/Bouille-Texture-Cheveux-3.mat
+- Assets/ModAssets/BoiledOne/Textures/Bouille-Texture-Vetements.png
+- Assets/ModAssets/BoiledOne/Audio/BoiledOne-Noise-6.ogg
+- Assets/ModAssets/BoiledOne/Textures/wawa.jpg
+- Assets/ModAssets/BoiledOne/Textures/Bouille-Texture-Yeux_BaseColor.png
+- Assets/ModAssets/BoiledOne/Prefabs/BoiledOne.prefab
+- Assets/ModAssets/BoiledOne/Materials/Bouille-Texture-Tete.mat
+- Assets/ModAssets/BoiledOne/Scripts/BoiledOneTK.asset
+- Assets/ModAssets/BoiledOne/Scripts/BoiledOne.asset
+- Assets/ModAssets/BoiledOne/Materials/Bouille-Texture-Vetements.mat
+- Assets/ModAssets/BoiledOne/Textures/Bouille-Texture-Cheveux-3.png
+- Assets/ModAssets/BoiledOne/Textures/Bouille-Texture-Cage_Normal.png
+- Assets/ModAssets/BoiledOne/Audio/BoiledOne-Hit-Enemy-Voice.ogg
+- Assets/ModAssets/BoiledOne/Textures/Bouille-Texture-Organes_Normal.png
+- Assets/ModAssets/BoiledOne/Materials/Bouille-Texture-Yeux.mat
+- Assets/ModAssets/BoiledOne/Textures/Bouille-Texture-Tete_Normal.png
+- Assets/ModAssets/BoiledOne/Audio/BoiledOne-Noise-2.ogg
+- Assets/ModAssets/BoiledOne/Textures/Bouille-Texture-Machoire_Normal.png
 Dependencies: []

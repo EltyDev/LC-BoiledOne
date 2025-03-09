@@ -35,13 +35,14 @@ namespace BoiledOne {
             }
 
             // We load our assets from our asset bundle. Remember to rename them both here and in our Unity project.
-            var ExampleEnemy = ModAssets.LoadAsset<EnemyType>("ExampleEnemy");
-            var ExampleEnemyTN = ModAssets.LoadAsset<TerminalNode>("ExampleEnemyTN");
-            var ExampleEnemyTK = ModAssets.LoadAsset<TerminalKeyword>("ExampleEnemyTK");
+            var BoiledOne = ModAssets.LoadAsset<EnemyType>("BoiledOne");
+            var BoiledOneTN = ModAssets.LoadAsset<TerminalNode>("BoiledTN");
+            var BoiledOneTK = ModAssets.LoadAsset<TerminalKeyword>("BoiledTK");
+
 
             // Optionally, we can list which levels we want to add our enemy to, while also specifying the spawn weight for each.
             /*
-            var ExampleEnemyLevelRarities = new Dictionary<Levels.LevelTypes, int> {
+            var BoiledOneLevelRarities = new Dictionary<Levels.LevelTypes, int> {
                 {Levels.LevelTypes.ExperimentationLevel, 10},
                 {Levels.LevelTypes.AssuranceLevel, 40},
                 {Levels.LevelTypes.VowLevel, 20},
@@ -54,7 +55,7 @@ namespace BoiledOne {
                 {Levels.LevelTypes.Modded, 60},     // Affects values for modded moons that weren't specified
             };
             // We can also specify custom level rarities
-            var ExampleEnemyCustomLevelRarities = new Dictionary<string, int> {
+            var BoiledOneCustomLevelRarities = new Dictionary<string, int> {
                 {"EGyptLevel", 50},
                 {"46 Infernis", 69},    // Either LLL or LE(C) name can be used, LethalLib will handle both
             };
@@ -62,12 +63,12 @@ namespace BoiledOne {
 
             // Network Prefabs need to be registered. See https://docs-multiplayer.unity3d.com/netcode/current/basics/object-spawning/
             // LethalLib registers prefabs on GameNetworkManager.Start.
-            NetworkPrefabs.RegisterNetworkPrefab(ExampleEnemy.enemyPrefab);
+            NetworkPrefabs.RegisterNetworkPrefab(BoiledOne.enemyPrefab);
 
             // For different ways of registering your enemy, see https://github.com/EvaisaDev/LethalLib/blob/main/LethalLib/Modules/Enemies.cs
-            Enemies.RegisterEnemy(ExampleEnemy, BoundConfig.SpawnWeight.Value, Levels.LevelTypes.All, ExampleEnemyTN, ExampleEnemyTK);
+            Enemies.RegisterEnemy(BoiledOne, BoundConfig.SpawnWeight.Value, Levels.LevelTypes.All, BoiledOneTN, BoiledOneTK);
             // For using our rarity tables, we can use the following:
-            // Enemies.RegisterEnemy(ExampleEnemy, ExampleEnemyLevelRarities, ExampleEnemyCustomLevelRarities, ExampleEnemyTN, ExampleEnemyTK);
+            // Enemies.RegisterEnemy(BoiledOne, BoiledOneLevelRarities, BoiledOneCustomLevelRarities, BoiledOneTN, BoiledOneTK);
             
             Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
         }

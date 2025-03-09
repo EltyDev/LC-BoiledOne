@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Diagnostics;
+using System.Timers;
 using GameNetcodeStuff;
 using Unity.Netcode;
 using UnityEngine;
@@ -9,6 +10,7 @@ namespace BoiledOne {
     class BoiledOneAI : EnemyAI
     {
         #pragma warning disable 0649
+        
         public Transform turnCompass = null!;
         public Transform attackArea = null!;
         #pragma warning restore 0649
@@ -24,26 +26,40 @@ namespace BoiledOne {
             HeadSwingAttackInProgress,
         }
 
+        AudioClip[] noises = null!;
+        float baseNoiseTimer;
+        float noiseTimerRandomness;
+        float noiseTimer;
+
         [Conditional("DEBUG")]
         void LogIfDebugBuild(string text) {
             Plugin.Logger.LogInfo(text);
         }
 
-        public override void Start() {
-            base.Start();
-            LogIfDebugBuild("Example Enemy Spawned");
-            timeSinceHittingLocalPlayer = 0;
-            creatureAnimator.SetTrigger("startWalk");
-            timeSinceNewRandPos = 0;
-            positionRandomness = new Vector3(0, 0, 0);
-            enemyRandom = new System.Random(StartOfRound.Instance.randomMapSeed + thisEnemyIndex);
-            isDeadAnimationDone = false;
-            // NOTE: Add your behavior states in your enemy script in Unity, where you can configure fun stuff
-            // like a voice clip or an sfx clip to play when changing to that specific behavior state.
-            currentBehaviourStateIndex = (int)State.SearchingForPlayer;
-            // We make the enemy start searching. This will make it start wandering around.
-            StartSearch(transform.position);
-        }
+            public override void Start() {
+                base.Start();
+                LogIfDebugBuild("Example Enemy Spawned");
+                timeSinceHittingLocalPlayer = 0;
+                creatureAnimator.SetTrigger("startWalk");
+                timeSinceNewRandPos = 0;
+                positionRandomness = new Vector3(0, 0, 0);
+                enemyRandom = new System.Random(StartOfRound.Instance.randomMapSeed + thisEnemyIndex);
+                isDeadAnimationDone = false;
+                currentBehaviourStateIndex = (int)State.SearchingForPlayer;
+                baseNoiseTimer = 50f;
+                noiseTimerRandomness = 20f;
+                noiseTimer = baseNoiseTimer + (float)enemyRandom.NextDouble() * noiseTimerRandomness;
+                noises = [
+                    Plugin.ModAssets.LoadAsset<AudioClip>("BoiledOne-Noise-1"),
+                    Plugin.ModAssets.LoadAsset<AudioClip>("BoiledOne-Noise-2"),
+                    Plugin.ModAssets.LoadAsset<AudioClip>("BoiledOne-Noise-3"),
+                    Plugin.ModAssets.LoadAsset<AudioClip>("BoiledOne-Noise-4"),
+                    Plugin.ModAssets.LoadAsset<AudioClip>("BoiledOne-Noise-5"),
+                    Plugin.ModAssets.LoadAsset<AudioClip>("BoiledOne-Noise-6"),
+                ];
+                
+                StartSearch(transform.position);
+            }
 
         public override void Update() {
             base.Update();
@@ -57,6 +73,7 @@ namespace BoiledOne {
                 }
                 return;
             }
+            DoRandomNoise();
             timeSinceHittingLocalPlayer += Time.deltaTime;
             timeSinceNewRandPos += Time.deltaTime;
             
@@ -71,13 +88,22 @@ namespace BoiledOne {
             }
         }
 
+        public void DoRandomNoise() {
+            noiseTimer -= Time.deltaTime;
+            if (noiseTimer <= 0) {
+                LogIfDebugBuild($"Random Noise from a Boiled One");
+                creatureVoice.PlayOneShot(noises[enemyRandom.Next(0, noises.Length)]);
+                noiseTimer = baseNoiseTimer + (float)enemyRandom.NextDouble() * noiseTimerRandomness;
+            }
+        }
+
         public override void DoAIInterval() {
             
             base.DoAIInterval();
             if (isEnemyDead || StartOfRound.Instance.allPlayersDead) {
                 return;
             };
-
+            LogIfDebugBuild($"Current State: {currentBehaviourStateIndex}");
             switch(currentBehaviourStateIndex) {
                 case (int)State.SearchingForPlayer:
                     agent.speed = 3f;
@@ -90,7 +116,6 @@ namespace BoiledOne {
 
                 case (int)State.StickingInFrontOfPlayer:
                     agent.speed = 5f;
-                    // Keep targeting closest player, unless they are over 20 units away and we can't see them.
                     if (!TargetClosestPlayerInAnyCase() || (Vector3.Distance(transform.position, targetPlayer.transform.position) > 20 && !CheckLineOfSightForPosition(targetPlayer.transform.position))){
                         LogIfDebugBuild("Stop Target Player");
                         StartSearch(transform.position);
