@@ -12,28 +12,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e80ae96b3eb9177eea5c8f9dadbcda1, type: 3}
   m_Name: BoiledOneTN
   m_EditorClassIdentifier: 
-  displayText: LE BOUILLIE
+  displayText: "The Boiled One, also called l'\xE9bouillant\xE9e or the Bouilli in
+    French, is an entity discovered in the year 2493 on the moon Zyrix by C-E92 (Company
+    Crew 92). The crew went to the old factory after receiving an SOS transmission.
+    Zyrix is \u200B\u200Ban old moon abandoned by the Company in the year 2412 following
+    a military incident. The moon was classified as forbidden and S++ due to abnormal
+    levels of fine radioactive particles. During the exploration of the old factory,
+    deactivated Coil-Heads are discovered as well as the lifeless bodies of C-E23.
+    The bodies are charred and the heads of several bodies are missing. The C-E92
+    report mentions a transmission disturbance with the ships, whispering and trumpet
+    sound resonating in the walls. C-E92 stops transmitting definitively after 10
+    hours of exploration, the last image transmissions show the body of the Boiled
+    One, a humanoid that appears limbless and with a face twisted by raw flesh. The
+    Boiled One is somehow invisible to the naked eye except when seen from inside
+    a camera or by victims of his curse. He will try to convince him to kill himself,
+    which caused the loss of C-E92.\r\n\r\nAccording to the investigation opened,
+    the Boiled One would be Mr. DIRETUS leader of C-E23 reported missing shortly
+    after the Zyrix incident.\r\n\r\nCompany note: In case of vision or sound associated
+    with a trumpet, a charred humanoid form or unknown transmissions picked up in
+    the walkie-talkies, it is advisable to evacuate the moon or let one of you perish
+    to the Boiled One. \r"
   terminalEvent: 
-  clearPreviousText: 0
-  maxCharactersToType: 0
-  buyItemIndex: 0
-  buyVehicleIndex: 0
+  clearPreviousText: 1
+  maxCharactersToType: 35
+  buyItemIndex: -1
+  buyVehicleIndex: -1
   isConfirmationNode: 0
-  buyRerouteToMoon: 0
-  displayPlanetInfo: 0
-  shipUnlockableID: 0
+  buyRerouteToMoon: -1
+  displayPlanetInfo: -1
+  shipUnlockableID: -1
   buyUnlockable: 0
   returnFromStorage: 0
   itemCost: 0
   creatureFileID: 0
-  creatureName: 
-  storyLogFileID: 0
+  creatureName: Boiled One
+  storyLogFileID: -1
   overrideOptions: 0
   acceptAnything: 0
   terminalOptions: []
   playClip: {fileID: 0}
-  playSyncedClip: 0
+  playSyncedClip: 2
   displayTexture: {fileID: 0}
-  displayVideo: {fileID: 0}
-  loadImageSlowly: 0
+  displayVideo: {fileID: 32900000, guid: 728332f9e6b437e45b8ab7c40f9bb578, type: 3}
+  loadImageSlowly: 1
   persistentImage: 0
